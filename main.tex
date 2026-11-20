@@ -1,49 +1,137 @@
-\documentclass[10pt,a4paper,sans]{moderncv}
+\documentclass[11pt,a4paper]{article}
 
-\moderncvstyle{classic}
-\moderncvcolor{blue}
 \usepackage[T1]{fontenc}
 \usepackage{lmodern}
-\usepackage[scale=0.86]{geometry}
-\setlength{\hintscolumnwidth}{2.7cm}
-\nopagenumbers{}
+\usepackage[margin=15mm]{geometry}
+\usepackage{graphicx}
+\usepackage{xcolor}
+\usepackage{hyperref}
 
-\name{Bojun}{Yang}
-\title{Master's Student in Electronic Information}
-\email{Ybj133001@Outlook.com}
-\social[github]{jike2000}
-\photo[60pt][0pt]{photo.jpg}
+\definecolor{Ink}{HTML}{172D45}
+\definecolor{Body}{HTML}{28384A}
+\definecolor{Accent}{HTML}{176577}
+\definecolor{Muted}{HTML}{476277}
+\definecolor{Rule}{HTML}{B9D0DB}
+\definecolor{Header}{HTML}{EBF3F7}
+\hypersetup{colorlinks=true,urlcolor=Accent,pdftitle={Bojun Yang - Curriculum Vitae},pdfauthor={Bojun Yang}}
+
+\renewcommand{\familydefault}{\sfdefault}
+\setlength{\parindent}{0pt}
+\pagestyle{empty}
+
+\newcommand{\cvsection}[1]{%
+  {\color{Accent}\fontsize{14}{17}\selectfont\bfseries #1\par}%
+  \vspace{4pt}%
+  {\color{Rule}\hrule height 0.6pt}%
+  \vspace{8pt}%
+}
+
+\newcommand{\cvdate}[1]{%
+  {\color{Muted}\fontsize{9}{11}\selectfont #1}%
+}
+
+\newcommand{\project}[3]{%
+  \noindent\parbox[t]{\dimexpr\linewidth-32mm\relax}{\raggedright\color{Ink}\bfseries #1}%
+  \hfill\makebox[30mm][r]{\cvdate{#2}}\par
+  \vspace{3pt}%
+  #3\par
+  \vspace{9pt}%
+}
+
+\newcommand{\detail}[2]{%
+  {\color{Ink}\bfseries #1\par}%
+  \vspace{2pt}%
+  #2\par
+  \vspace{7pt}%
+}
 
 \begin{document}
-\makecvtitle
+\raggedright
+\color{Body}
+\fontsize{10.7}{14.5}\selectfont
 
-\section{Education}
-\cventry{09/2026--Present}{Master's in Electronic Information}{Shanghai University}{}{}{}
-\cventry{09/2022--09/2026}{Robotics Engineering}{Nanjing University of Information Science \& Technology}{}{}{}
+\noindent\begingroup
+\setlength{\fboxsep}{5mm}%
+\colorbox{Header}{%
+  \begin{minipage}{\dimexpr\textwidth-2\fboxsep\relax}
+    \begin{minipage}[c]{\dimexpr\linewidth-34mm\relax}
+      \raggedright
+      {\color{Ink}\fontsize{32}{36}\selectfont\bfseries Bojun Yang\par}
+      \vspace{3pt}
+      {\color{Muted}\fontsize{12}{15}\selectfont Master's Student in Electronic Information\par}
+      \vspace{13pt}
+      {\fontsize{10}{13}\selectfont
+        \href{mailto:Ybj133001@Outlook.com}{Ybj133001@Outlook.com}%
+        \enspace\textperiodcentered\enspace
+        \href{https://github.com/jike2000}{github.com/jike2000}\par}
+    \end{minipage}\hfill
+    \begin{minipage}[c]{26mm}
+      \includegraphics[width=\linewidth]{photo.jpg}
+    \end{minipage}
+  \end{minipage}}%
+\endgroup\par
+\vspace{18pt}
 
-\section{Selected Projects}
-\cventry{01/2026--09/2026}{Scheduling the Montage Astronomical Image Mosaicking Workflow}{}{}{}{
-Adapted particle swarm optimization (PSO) to assign precedence-constrained tasks to virtual machines in a heterogeneous cloud. Compared makespan and resource utilization with Heterogeneous Earliest Finish Time (HEFT).
-}
-\cventry{06/2025--08/2025}{Vision-Guided Grasping with a Six-Axis Robotic Arm}{}{}{}{
-Built a sorting system with STM32 and OpenMV. Detected object colors and centroids with OpenMV, calculated joint angles with inverse kinematics, and controlled the servos using pulse-width modulation.
-}
-\cventry{04/2025--06/2025}{ABB Robotic Arm Simulation and Commissioning}{}{}{}{
-Calibrated tools with the six-point method, defined workobject frames, and mapped digital I/O in RobotStudio. Validated pick-and-place sequences in simulation and exported the RAPID program for physical operation.
-}
+\noindent
+\begin{minipage}[t]{0.595\textwidth}
+  \raggedright
+  \vspace{0pt}
+  \cvsection{Selected Projects}
 
-\section{Research and Publication}
-\cventry{05/2023--05/2024}{Core Member}{Provincial Innovation and Entrepreneurship Program}{}{}{
-Used Python and web crawling to study China's digital collectibles industry. Built cross-chain transaction and storage features and combined hash locks with identity verification in Trust ID. The core functionality was deployed in Shuwen Tanyuan at the Inner Mongolia Digital Trading Center.
-}
-\cvitem{10/2023}{\textbf{Co-first author.} ``Design of a Personal Digital Collectibles Management Platform in the Metaverse.'' \textit{Tansuo Kexue}, no.~25, p.~21, 2023 (in Chinese).}
+  \project{Scheduling the Montage Astronomical Image Mosaicking Workflow}{Jan--Sep 2026}{%
+    Adapted particle swarm optimization (PSO) to assign precedence-constrained tasks to virtual machines in a heterogeneous cloud. Compared makespan and resource utilization with Heterogeneous Earliest Finish Time (HEFT).}
 
-\section{Skills and Recognition}
-\cvitem{Technical}{Python, ABB RobotStudio, RAPID, STM32, OpenMV, inverse kinematics, and workflow scheduling.}
-\cvitem{Certifications}{National Computer Rank Examination Level 2 and College English Test Bands 4 and 6 (CET-4 and CET-6).}
-\cvitem{Awards}{Lanqiao Cup Python Provincial First Prize (Group B), Xuechuang Cup Provincial Special Prize, Zhengda Cup Provincial Second Prize, University Second-Class Scholarship, and University Merit Student Award.}
+  \project{Vision-Guided Grasping with a Six-Axis Robotic Arm}{Jun--Aug 2025}{%
+    Built a sorting system with STM32 and OpenMV. Detected object colors and centroids with OpenMV, calculated joint angles with inverse kinematics, and controlled the servos using pulse-width modulation.}
 
-\section{Campus Service}
-\cvitem{2022--2023}{\textbf{Class Mental Health Representative.} Organized class well-being activities and offered initial peer support. Received an award in the second Group Psychological Counseling Competition.}
+  \project{ABB Robotic Arm Simulation and Commissioning}{Apr--Jun 2025}{%
+    Calibrated tools with the six-point method, defined workobject frames, and mapped digital I/O in RobotStudio. Validated pick-and-place sequences in simulation and exported the RAPID program for physical operation.}
+
+  \vspace{5pt}
+  \cvsection{Research and Publication}
+
+  \project{Core Member}{May 2023--May 2024}{%
+    \textit{Provincial Innovation and Entrepreneurship Program}\par
+    \vspace{2pt}
+    Used Python and web crawling to study China's digital collectibles industry. Built cross-chain transaction and storage features and combined hash locks with identity verification in Trust ID. The core functionality was deployed in Shuwen Tanyuan at the Inner Mongolia Digital Trading Center.}
+
+  \project{Co-first author}{Oct 2023}{%
+    ``Design of a Personal Digital Collectibles Management Platform in the Metaverse.'' \textit{Tansuo Kexue}, no.~25, p.~21, 2023 (in Chinese).}
+\end{minipage}\hfill
+\begin{minipage}[t]{0.345\textwidth}
+  \raggedright
+  \vspace{0pt}
+  \cvsection{Education}
+
+  \detail{Master's in Electronic Information}{%
+    Shanghai University\par
+    \cvdate{Sep 2026--Present}}
+
+  \detail{Robotics Engineering}{%
+    Nanjing University of Information Science \& Technology\par
+    \cvdate{Sep 2022--Sep 2026}}
+
+  \vspace{7pt}
+  \cvsection{Skills and Recognition}
+
+  \detail{Technical}{Python, ABB RobotStudio, RAPID, STM32, OpenMV, inverse kinematics, and workflow scheduling.}
+
+  \detail{Certifications}{National Computer Rank Examination Level 2 and College English Test Bands 4 and 6 (CET-4 and CET-6).}
+
+  \detail{Awards}{%
+    Lanqiao Cup Python \textbf{Provincial First Prize} (Group B)\par
+    Xuechuang Cup \textbf{Provincial Special Prize}\par
+    Zhengda Cup \textbf{Provincial Second Prize}\par
+    University Second-Class Scholarship\par
+    University Merit Student Award}
+
+  \vspace{7pt}
+  \cvsection{Campus Service}
+
+  \detail{Class Mental Health Representative}{%
+    \cvdate{2022--2023}\par
+    \vspace{2pt}
+    Organized class well-being activities and offered initial peer support. Received an award in the second Group Psychological Counseling Competition.}
+\end{minipage}\par
 
 \end{document}
